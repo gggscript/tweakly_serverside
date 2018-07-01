@@ -1,6 +1,7 @@
 <?php
   require_once('coinhive-api.php');
-  $coinhive = new CoinHiveAPI('fEQzhqzuGmjLAALli7FpQq5MQN3wR1gX'); //Replace with your secret token
+  $config = parse_ini_file('config.ini');
+  $coinhive = new CoinHiveAPI($config['secretkey']);
 
   //get action
   $action = getallheaders()['action'];
