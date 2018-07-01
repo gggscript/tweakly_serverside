@@ -4,7 +4,7 @@
 //Replace this token with your own ^^^^^^^^^^^^^^^^^^^^^^^^^
 
   //get action
-  $action = getallheaders()['action'];
+  $action = $_GET['action'];
 
   if ($action == "balance") {
     //get username
@@ -38,7 +38,7 @@
   }
 
   function getHeader($headerName){
-    foreach (getallheaders() as $key => $value) {
+    foreach ($_GET as $key => $value) {
       if ($key == $headerName) {
         return $value;
       }
