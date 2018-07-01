@@ -14,7 +14,7 @@
     if ($user->success == 1) {
       echo "{\"success\":true,\"name\":\"$user->name\",\"total\":$user->total,\"withdrawn\":$user->withdrawn,\"balance\":$user->balance}";
     } else {
-      echo "{\"success\":false,\"error\":\"$users->error\"}";
+      echo "{\"success\":false,\"error\":\"$user->error\"}";
     }
   } elseif ($action == "withdraw") {
     //get username + amount
@@ -33,6 +33,8 @@
     } else {
       echo "{\"success\":false,\"error\":\"$stats->error\"}";
     }
+  } else {
+    echo "{\"success\":false,\"error\":\"unknown_action\"}";
   }
 
   function getHeader($headerName){
